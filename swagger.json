@@ -1,0 +1,180 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Node.js Express API"
+    },
+    "tags": [
+        {
+            "name": "Tshirt and User",
+            "description": "An API for Tshirts and Users"
+        }
+    ],
+    "paths": {
+      "/tshirt": {
+        "get": {
+          "summary": "Get a T-shirt",
+          "tags": [
+            "Tshirt and User"
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "color": {
+                    "type": "string"
+                  },
+                  "size": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      },
+      "/tshirt/{id}": {
+        "post": {
+          "summary": "Create a T-shirt with ID",
+          "tags": [
+            "Tshirt and User"
+          ],          
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "T-shirt ID",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "T-shirt",
+              "description": "T-shirt object",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "logo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tshirt": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/user/{id}": {
+        "get": {
+          "summary": "Get a user by ID",
+          "tags": [
+            "Tshirt and User"
+          ],          
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "User ID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a user with ID",
+          "tags": [
+            "Tshirt and User"
+          ],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "User ID",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "User",
+              "description": "User object",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+            ],
+              "responses": {
+                "200": {
+                  "description": "Successful response",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/": {
+            "get": {
+              "summary": "Get the root endpoint",
+              "tags": [
+                "Tshirt and User"
+              ],
+              "responses": {
+                "200": {
+                  "description": "Successful response",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      
+           
+  
